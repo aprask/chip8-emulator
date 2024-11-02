@@ -6,13 +6,13 @@
 #include <stdbool.h>
 #include <sys/time.h>
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
+    if (argc != 2) {
         printf("Invalid number of arguments\n");
         return -1;
     }
-    int video_scale = atoi(argv[1]);
-    int cycle_delay = atoi(argv[2]);
-    const char* rom = argv[3];
+    int video_scale = 10;
+    int cycle_delay = 1;
+    const char* rom = argv[1];
     chip8* chip8_inst = (chip8*)malloc(sizeof(chip8));
     if (chip8_inst == NULL) {
         printf("Failed to allocate memory of chip8 instance\n");
