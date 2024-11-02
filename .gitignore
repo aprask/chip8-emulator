@@ -1,0 +1,4 @@
+build/
+roms/
+SDL/
+.vscode/
