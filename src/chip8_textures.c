@@ -27,7 +27,7 @@ void sdl_update(void const* buffer, int pitch) {
     SDL_RenderPresent(renderer);
 }
 
-bool process_input(uint8_t* keys) {
+bool process_input(chip8* chip8_t) {
     SDL_Event event;
     bool quit = false;
 
@@ -40,43 +40,43 @@ bool process_input(uint8_t* keys) {
             case SDL_KEYDOWN:
                 switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE: quit = true; break;
-                    case SDLK_x: keys[0] = 1; break;
-                    case SDLK_1: keys[1] = 1; break;
-                    case SDLK_2: keys[2] = 1; break;
-                    case SDLK_3: keys[3] = 1; break;
-                    case SDLK_q: keys[4] = 1; break;
-                    case SDLK_w: keys[5] = 1; break;
-                    case SDLK_e: keys[6] = 1; break;
-                    case SDLK_a: keys[7] = 1; break;
-                    case SDLK_s: keys[8] = 1; break;
-                    case SDLK_d: keys[9] = 1; break;
-                    case SDLK_z: keys[0xA] = 1; break;
-                    case SDLK_c: keys[0xB] = 1; break;
-                    case SDLK_4: keys[0xC] = 1; break;
-                    case SDLK_r: keys[0xD] = 1; break;
-                    case SDLK_f: keys[0xE] = 1; break;
-                    case SDLK_v: keys[0xF] = 1; break;
+                    case SDLK_x: chip8_t->keypad[0] = 1; break;
+                    case SDLK_1: chip8_t->keypad[1] = 1; break;
+                    case SDLK_2: chip8_t->keypad[2] = 1; break;
+                    case SDLK_3: chip8_t->keypad[3] = 1; break;
+                    case SDLK_q: chip8_t->keypad[4] = 1; break;
+                    case SDLK_w: chip8_t->keypad[5] = 1; break;
+                    case SDLK_e: chip8_t->keypad[6] = 1; break;
+                    case SDLK_a: chip8_t->keypad[7] = 1; break;
+                    case SDLK_s: chip8_t->keypad[8] = 1; break;
+                    case SDLK_d: chip8_t->keypad[9] = 1; break;
+                    case SDLK_z: chip8_t->keypad[0xA] = 1; break;
+                    case SDLK_c: chip8_t->keypad[0xB] = 1; break;
+                    case SDLK_4: chip8_t->keypad[0xC] = 1; break;
+                    case SDLK_r: chip8_t->keypad[0xD] = 1; break;
+                    case SDLK_f: chip8_t->keypad[0xE] = 1; break;
+                    case SDLK_v: chip8_t->keypad[0xF] = 1; break;
                 }
                 break;
 
             case SDL_KEYUP:
                 switch (event.key.keysym.sym) {
-                    case SDLK_x: keys[0] = 0; break;
-                    case SDLK_1: keys[1] = 0; break;
-                    case SDLK_2: keys[2] = 0; break;
-                    case SDLK_3: keys[3] = 0; break;
-                    case SDLK_q: keys[4] = 0; break;
-                    case SDLK_w: keys[5] = 0; break;
-                    case SDLK_e: keys[6] = 0; break;
-                    case SDLK_a: keys[7] = 0; break;
-                    case SDLK_s: keys[8] = 0; break;
-                    case SDLK_d: keys[9] = 0; break;
-                    case SDLK_z: keys[0xA] = 0; break;
-                    case SDLK_c: keys[0xB] = 0; break;
-                    case SDLK_4: keys[0xC] = 0; break;
-                    case SDLK_r: keys[0xD] = 0; break;
-                    case SDLK_f: keys[0xE] = 0; break;
-                    case SDLK_v: keys[0xF] = 0; break;
+                    case SDLK_x: chip8_t->keypad[0] = 0; break;
+                    case SDLK_1: chip8_t->keypad[1] = 0; break;
+                    case SDLK_2: chip8_t->keypad[2] = 0; break;
+                    case SDLK_3: chip8_t->keypad[3] = 0; break;
+                    case SDLK_q: chip8_t->keypad[4] = 0; break;
+                    case SDLK_w: chip8_t->keypad[5] = 0; break;
+                    case SDLK_e: chip8_t->keypad[6] = 0; break;
+                    case SDLK_a: chip8_t->keypad[7] = 0; break;
+                    case SDLK_s: chip8_t->keypad[8] = 0; break;
+                    case SDLK_d: chip8_t->keypad[9] = 0; break;
+                    case SDLK_z: chip8_t->keypad[0xA] = 0; break;
+                    case SDLK_c: chip8_t->keypad[0xB] = 0; break;
+                    case SDLK_4: chip8_t->keypad[0xC] = 0; break;
+                    case SDLK_r: chip8_t->keypad[0xD] = 0; break;
+                    case SDLK_f: chip8_t->keypad[0xE] = 0; break;
+                    case SDLK_v: chip8_t->keypad[0xF] = 0; break;
                 }
                 break;
         }
