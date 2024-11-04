@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
     gettimeofday(&last_cycle_time, NULL);
     bool quit = false;
     while (!quit) {
-        quit = process_input(chip8_inst->keypad);
+        quit = process_input(chip8_inst);
         struct timeval current_time;
         gettimeofday(&current_time, NULL);
         float dt = (current_time.tv_sec - last_cycle_time.tv_sec) * 1000.0f + 
